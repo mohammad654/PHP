@@ -1,0 +1,298 @@
+
+                            PHP
+___________________________________________________________________
+Arabic
+        #   //      /*  */
+
+        AMP   : Apache MySQL PHP
+        HTTP  : 80
+        MySQL : 3306
+        XAPP:all os apache MySQL php perl
+        Information : phpinfo();
+        Date : date_default_timezone_set('Europe/Amsterdam');
+        type : gettype();  var_dump();
+        Location :dirname(__FILE__);
+
+        type
+            string
+            integer
+            boolean
+            float
+            array
+            null
+            object
+            Resource
+
+        Constants :define()
+        Locations : __FILE__   __DIR__  __LINE__;
+
+        Operators
+               Arithmetic Operator
+                        + Addiction
+                        - Subtraction
+                        * Multiplication
+                        / Division
+                        % Modulus
+                Logic Operator
+                        and && Condition 1 and condition 2
+                        xor  condition 1 or condition 2 but not all
+                        or || Condition 1 or Condition 2
+                        ! Not
+               Assignment Operator
+                        != Not Equal
+                        = Assignment Operator
+                        == Equal
+                        === Identical
+                        ++$ Per Increment
+                        $++ Post Increment
+                        --$ Pre Decrement
+                        $-- Post Decrement
+
+
+
+
+         Error Control Operator @ or die("")
+         Do while for
+
+     Array
+            1- Indexed array
+            2- Associative array
+            3-Multidimensional array
+
+        length:  count();
+        Search
+            in_array("PHP",$my_array,true);
+             array_search("PHP",$my_arry,true);
+             array_key_exists("MySQL",$my_arry);
+
+        Add
+            array_push($my_array,"End");End
+            array_unshift($my_array,"First");First
+
+        Remove
+            array_pop($my_array);Last Item
+            array_shift($my_array);First Item
+
+        Sort Indexed Array
+            sort($my_array,SORT_STRING);
+            rsort($my_array);
+
+        Sort Associative  Array
+              asort($my_array,SORT_STRING);
+              arsort($my_array);
+              ksort($my_array,SORT_STRING);
+              krsort($my_array);
+
+         $revers=array_reverse($my_array,false);
+         shuffle($my_array);Shuffle
+         $sum=array_sum($array_); +add
+         array_rand($my_array,3); rand
+         array_unique($my_array); one time
+
+         in_array()
+
+      Explode converted to  array
+         explode(" . ",$my_php,3(-2)); cut explode( Separator,String,limit)
+
+      Joined the array into String
+         implode(" . ",$my_array); or join(" . ",$my_array); between
+
+
+
+         str_split($my_php,3); split array
+         chunk_split($my_php,3," @ "); string
+
+      Str _Replace : str_replace(Search,Replace ,String ,Count);
+         $st=str_replace("PHP","PHP &MySQL",$my_php,$i);
+
+       Str_Repeat : str_repeat(String[Required] ,Repeat[Required]);
+         str_repeat($my_php,40)
+
+      Str_Shuffle : str_shuffle(String[Required]);
+
+      Str_len :strlen(String);
+
+     Add slashes : addslashes(string)
+     Clean slashes: stripslashes($my_php)
+     strip tags  : strip_tags(String ,allow );
+  Case
+     Lower case :strtolower(String );
+     Upper case :strtoupper(String );
+     Lower case first: lcfirst(String );
+     Upper  case first: ucfirst(String );
+     Upper  case of words: ucwords(String );
+
+   Trim : trim(String , charlist);
+
+   str_words_count : str_words-count(string,format(0,1,2) ,charlist"&")
+   format(0,1,2): 0 default ,1 indexed array , 2 Associative array
+
+  Parse : parse_str(string array);
+  nl2br(string ,true)
+
+  strpos (string, find ,offset);
+  strpos($my_php,"PHP");
+  stripos($my_php,"PHP");
+  strrpos($my_php,"PHP");right
+
+   Search
+
+          strstr(string , Search, before(true)); or strchr
+          stristr(string , Search, before(true));
+
+   Compare two strings
+          strcmp($my_php,$my_php2)
+          strncmp($my_php,$my_php2)
+
+    Revers
+         strrev($my_php);
+
+    substr — Return part of a string
+         substr ( string  , start  , length )
+         substr($my_php,4,8);
+
+         stubstr_count(string ,substring,start  , length );
+         substr_compare(string1, string2,start, length ,case)
+         substr_compare($my_php,$my_php2,4,8,true);
+
+
+    Include
+            include "index.html";
+            include_once "index.html"; one time
+
+    Require
+       require "index.html";
+       require_once "index.html";
+
+   Switch{case"": break;  default}
+
+
+
+
+
+        File
+            if  file is exists : (file_exists($file))
+            Add text into the file  and create file :  file_put_contents($file,"Mohammad Ali");
+            Is writable :  is_writable($file)
+            Create dir : mkdir("");
+            Delete : rmdir("");
+                      unlink(file,context);
+
+           fopen(filename,mode ,include_path,context);
+                r :read  only the file must be  exist
+                r+: read and write the file must be  exist
+                w: write and Create if not exist  and Clear the content
+                w+: write read  and Create if not exist and Clear the content
+                a: write only  and Create if not exist and  not Clear the content
+                a+: write and read  and Create if not exist and  not Clear the content
+                x: write only  and Create if not exist the file must be not exist
+                x+:write read  and Create if not exist the file must be not exist
+
+                \r\n new line
+
+                fread(handle,length);
+                fwrite(handle,String ,length);
+                fclose(handle);
+                fseek(handle,offset,whence);fseek($file_handle,12,SEEK_SET);
+
+                File size: filesize(file name );
+
+
+
+
+         Create    file_put_contents(file,data,mode,context );
+                   mode  1- FILE_APPEND  Save old and  add new
+                         2-LOCK_EX  Remove Old and keep new
+                         3-FILE_USE_INCLUDE_PATH ???
+
+          Get :  file_get_contents(path , include-path,context,offset, max_length)
+                 file_get_contents("mo22.txt",false,NULL,2,10);
+
+       Path :  __FILE__    or  __DIR__
+          basename(__FILE__,".php")
+          pathinfo(__FILE__) OR pathinfo(__FILE__,PATHINFO_EXTENSION)
+
+       Copy : copy(Old file ,New file );
+       Rename : rename(Old file ,New file)
+
+
+
+       $global=" Predefined Variable Global";
+
+          $GLOBALS['global']; Or $GLOBALS['global']="Predefined Variable Global";
+
+
+      Server
+     $_SERVER['SERVER_NAME']
+     $_SERVER['QUERY_STRING']
+     $_SERVER['HTTP_REFERER']
+     $_SERVER['SERVER_PORT']
+     $_SERVER['REQUEST_METHOD'];
+
+
+
+        $_GET  $_POST
+
+        Cookies
+
+        setcookie(name ,Value ,Expire ,Path ,Domain ,Secure,httponly)
+        Name : Name of the cookies
+        Value: Content of teh cookies
+        Expire :Expiration Date
+        Path :
+        Domain
+
+        Delete : setcookie('Back_Color',"",time()-3600,"/");
+
+
+        Start Session
+        session_start();
+        $_SESSION['username']='Mohammad';
+        $_SESSION['nickname']='Mo';
+
+
+    Close Session
+    session_unset();
+    session_destroy();
+
+
+    sleep(5);
+    usleep(50000);
+    time_sleep_until(time()+6);
+
+    exit("");
+    die("");
+    uniqid(prefix,more_entopy);
+    filter_var($my_filter,FILTER_SANITIZE_ADD_SLASHES);
+
+
+    Time
+    date_default_timezone_get()
+    date_default_timezone_set();
+    date(format,timestap)
+    strtotime(date,timestap(now))
+__________________________________________________????????????????
+array_fill
+
+
+getMostUsedColors(
+
+
+
+
+
+
+____________________________________________________________________
+            Linkedin
+    php version   : phpversion()
+   str to lower   : strtolower() ||
+   First letter   : ucfirst(strtolower($mo))
+   str to upper   : strtoupper()
+   Tag            : strip_tags($mo2,"<h1>");
+   Include        : include 'index.html';
+   path            : get_include_path();
+
+
+   ____________________
+   composer
+   composer require league/color-extractor:0.3.*

@@ -1,0 +1,211 @@
+
+
+            PHP
+ For Years
+
+        echo '<select >';
+        for ($i=1992; ; $i++){
+            if ($i >2020){
+                break;
+            }
+            echo '<option value="$i">'. $i."</option>";
+        }
+        echo '</select>';
+
+
+Foreach
+    $my_array=array("HTML","CSS3","JavaScript","Bootstrap","Sass","PHP","MySQL");
+    echo "<ul>";
+    foreach ( $my_array as $skills ){
+        echo "<li>".$skills."</li>";
+    }
+    echo "</ul>";
+
+For
+    echo "<ul>";
+    for ( $i=0; $i < count($my_array); $i++){
+        echo "<li>".$my_array[$i]."</li>";
+    }
+    echo "</ul>";
+    echo "<pre>";
+    print_r($my_array);
+    echo "</pre>";
+    _______________________________
+    $    $my_array=array("HTML","CSS3","JavaScript","Bootstrap","Sass","PHP","MySQL");
+    echo "<pre>";
+    print_r($my_array);
+    echo "</pre>";
+    $rand=array_rand($my_array,3);
+    echo "<pre>";
+    print_r($rand);
+    echo "</pre>";
+    echo $my_array[$rand[0]]."<br>";
+    echo $my_array[$rand[1]]."<br>";
+    echo $my_array[$rand[2]]."<br>";
+
+
+    ____________________________________________
+    Switch
+
+switch ($my_php){
+    case "JS":
+        echo "JS";
+    break;
+    case "PHP":
+        echo "PHP";
+    break;
+
+    default:
+        echo "Not fond ";
+}
+
+
+File
+________________________
+$file="my_file";
+
+
+if (is_dir($file)){
+    rmdir($file);
+    echo "The file is Exist".$file;
+}else{
+    mkdir($file);
+    echo "The file is Created ".$file;
+}
+22222222222____________________________________________-
+if (file_exists(__DIR__."/PHP")){
+    echo "The file is exist";
+}else{
+    echo "The file is not  exist and Created ";
+    mkdir(__DIR__."/PHP");
+}
+
+echo "<br>";
+$path=__DIR__."/PHP/";
+
+file_put_contents($path."text.txt","massage ");
+
+$file=$path."text.txt";
+
+chmod($file,0444);
+
+if (is_writable($file)){
+    file_put_contents($path."text.txt","massage ");
+}else{
+    chmod($file,0755);
+    file_put_contents($path."text.txt","massage Testing  ");
+}
+include "PHP/text.txt";
+
+
+33_________________________________
+$file_handle=fopen("mohammad.txt","r+");
+$file_size=filesize("mohammad.txt");
+
+$read=fread($file_handle,$file_size);
+
+fseek($file_handle,-1,SEEK_END);
+
+//fseek($file_handle,7,SEEK_CUR);
+
+fwrite($file_handle,'End');
+
+-_____________________________________Ifo
+$path=pathinfo(__FILE__);
+echo $path['dirname']."<br>";
+echo $path['basename']."<br>";
+echo $path['extension']."<br>";
+echo $path['filename']."<br>";
+
+
+__________________________________
+
+Cookies
+
+setcookie("Mohammad","Test",time()+1000,"/");
+
+ echo setcookie("Mohammad","Test",time()+1000,"/");
+
+ if (count($_COOKIE)>0){
+     echo "Cookies is Enabled ";
+ }else{
+     echo "Cookies is Not Enabled ";
+ }
+
+ ______________________________
+$main_Color="#FFF";
+
+ if ($_SERVER['REQUEST_METHOD']=='POST'){
+     $main_Color=$_POST['color'];
+     setcookie('Back_Color',$main_Color,time()+3600,"/");
+ }
+
+ if (isset($_COOKIE['Back_Color'])){
+     $choose_Color=$_COOKIE['Back_Color'];
+ }else{
+     $choose_Color=$main_Color;
+ }
+include "index.html";
+ ?>
+<form  action="<?php echo $_SERVER['PHP_SELF']; ?>"
+       method="POST" style="background-color:<?php echo  $choose_Color; ?>">
+
+    <input type="color" name="color">
+    <input type="submit" value="Choose" >
+</form>
+
+
+____________________
+session_start();
+$_SESSION['username']='Mohammad';
+$_SESSION['Count'];
+if (empty($_SESSION['Count'])){
+    $_SESSION['Count']=1;
+}else{
+    $_SESSION['Count']++;
+}
+
+______________________
+Page 1
+session_start();
+//$_SESSION['username']='Mohammad';
+echo  $_SESSION['user'];
+
+echo "<br>";
+echo '<a href="page2.php">'.'Go'.'</a>';
+?>
+    <form action="page2.php" method="POST">
+    <input type="text" name="username">
+    <!--    <input type="password" name="password">-->
+    <input type="submit" value="LogIn">
+</form>
+
+
+Page 2
+session_start();
+
+$admins=array("mohammad","ali");
+if ($_SERVER['REQUEST_METHOD']=="POST"){
+    $user=$_POST['username'];
+
+    if (in_array($user,$admins)){
+        echo "Hello Welcome : ". $user ." You are Admin";
+        $_SESSION['user']= $user;
+        header("Refresh:4; url=index.php");
+    }else{
+        echo "Hello : ". $user." You are Not Admin : ";
+    }
+}else{
+    echo "Error";
+}
+
+
+______________________---time
+echo date("y-m-d")."<br>";
+$time=time()+(30*24*60*60);
+echo date("y-m-d",$time);
+
+
+echo date("l jS \of F Y h:i:s am")."<br>";
+
+date("l jS \of F Y h:i:s am",strtotime("now",time()-3600))."<br>";
